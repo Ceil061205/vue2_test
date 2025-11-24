@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 浏览器关闭掉还是在 -->
+  <!-- 自动操作api或者清空缓存才会消失 -->
+  <!-- 大小都是5mb左右 -->
+</head>
+<body>
+  <button onclick="saveData()">bc</button>
+  <button onclick="readData()">dq</button>
+  <button onclick="deleteData()">sc</button>
+  <button onclick="deleteAllData()">scall</button>
+  <script type="text/javascript">
+   let p = {name:'zhangsan',age:10} 
+    function saveData(){
+      localStorage.setItem('msg','hello')
+      localStorage.setItem('person',JSON.stringify(p))
+    }
+     function readData() {
+      // 获取不到返回null
+        console.log(localStorage.getItem('msg'));
+        const result = localStorage.getItem('person')
+        console.log(JSON.parse(result));
+      }
+     function deleteData() {
+        localStorage.removeItem('msg')
+      }
+      function deleteAllData() {
+          localStorage.clear()
+        }
+
+
+  </script>
+</body>
+</html>

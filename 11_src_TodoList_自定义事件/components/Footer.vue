@@ -2,6 +2,7 @@
   <div class="todo-footer" v-show="total">
         <label>
           <!-- <input type="checkbox" :checked="isAll" @change="checkAll"/> -->
+           <!-- v-model不建议直接改props  以下可以 -->
            <input type="checkbox" v-model="isAll"/>
         </label>
         <span>
@@ -14,7 +15,7 @@
 
 export default {
   name: "MyFooter",
-  props: ['todos','checkAllTodo',' clearAllTodo'],
+  props: ['todos'],
   computed: {
     total(){ return this.todos.length},
     doneTotal(){
@@ -31,7 +32,8 @@ export default {
         return this.doneTotal === this.total && this.total > 0
        },
        set(value){
-         this.checkAllTodo(value)
+         //  this.checkAllTodo(value)
+        this.$emit('checkAllTodo',value)
       }
     }
   },
@@ -40,7 +42,8 @@ export default {
   //     this.checkAllTodo(e.target.checked)
     //   }
     clearAll() {
-      this.checkAllTodo()
+      // this.clearAllTodo()
+      this.$emit('clearAllTodo')
     }
   }
 }
