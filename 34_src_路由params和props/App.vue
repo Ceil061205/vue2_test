@@ -6,10 +6,11 @@
     <div class="row">
       <div class="col-xs-2 col-xs-offset-2">
         <div class="list-group">
+          <!-- <a class="list-group-item" href="./about.html">About</a>
+          <a class="list-group-item active" href="./home.html">Home</a> -->
 
-          <!-- 浏览器历史浏览记录两种模式 replace替换当前栈顶   默认是push -->
-          <router-link  class="list-group-item" active-class="active" to="/about">About</router-link>
-          <router-link  class="list-group-item" active-class="active" to="/home">Home</router-link>
+          <router-link class="list-group-item" active-class="active" :to="{path:'gy'}">About</router-link>
+          <router-link class="list-group-item" active-class="active" to="/home">Home</router-link>
   
         </div>
       </div>

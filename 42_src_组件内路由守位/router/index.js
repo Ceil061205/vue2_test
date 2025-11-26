@@ -5,7 +5,6 @@ import Message from "@/pages/Message.vue";
 import News from "@/pages/News.vue";
 import VueRouter from "vue-router";
 const router = new VueRouter({
-  mode:'history',//默认是hash#兼容性好，项目上线之后服务器不用进行额外配置
   routes: [{
     name:'gy',
     path: '/about',

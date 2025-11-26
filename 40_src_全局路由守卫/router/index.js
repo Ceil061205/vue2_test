@@ -5,13 +5,11 @@ import Message from "@/pages/Message.vue";
 import News from "@/pages/News.vue";
 import VueRouter from "vue-router";
 const router = new VueRouter({
-  mode:'history',//默认是hash#兼容性好，项目上线之后服务器不用进行额外配置
   routes: [{
     name:'gy',
     path: '/about',
     component: About,
     meta: {
-      isAuth:true,
       title:'关于'
     }
   },
@@ -36,7 +34,7 @@ const router = new VueRouter({
         // 二级不用加斜杠
         path: 'message',
         component: Message,
-        meta: { isAuth: true, title: '消息' },//路由元信息给要经过验证的路由打标识
+        meta:{isAuth:true,title:'消息'},//路由元信息给要经过验证的路由打标识
         children: [
           {
             name: 'xq',
@@ -53,21 +51,21 @@ const router = new VueRouter({
   }]
 })
 // 全局前置路由守卫---在每次路由切换之前和初始化时调用
-// router.beforeEach((to, from, next) => {
-//   // if (to.path === '/home/news' || to.path === '/home/message')
-//   // if(to.name === 'xingwen' || to.name === 'xiaoxi')
-//   if(to.meta.isAuth)
-//   {
-//     if (localStorage.getItem('school') === 'at') {
-//       next()//放行
-//     }else {
-//       alert('error')
-//   }
-//   }
-//    else {
-//     next()
-//   }
-// })
+router.beforeEach((to, from, next) => {
+  // if (to.path === '/home/news' || to.path === '/home/message')
+  // if(to.name === 'xingwen' || to.name === 'xiaoxi')
+  if(to.meta.isAuth)
+  {
+    if (localStorage.getItem('school') === 'at') {
+      next()//放行
+    }else {
+      alert('error')
+  }
+  }
+   else {
+    next()
+  }
+})
 // 后置路由守位---在每次路由切换之后和初始化时调用
 router.afterEach((to) => {
   //切换完才能改标题
