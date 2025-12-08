@@ -21,16 +21,22 @@
         </div>
       </div>
     </div>
+    <Dialog>
+      
+    </Dialog>
+    
 
   </div>
 </template>
 
 <script>
 import Banner from './components/Banner.vue';
+import Dialog from './pages/Dialog.vue';
 export default {
   name: 'App',
   components: {
-    Banner
+    Banner,
+    Dialog
   }
 }
 </script>
