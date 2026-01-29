@@ -23,6 +23,12 @@ export default {
       // 后退2步 正前进 负后退
       this.$router.go(-2)
     }
+  },
+  mounted() {
+    console.log(this.$attrs);
+    console.log(this.$listeners);
+    
+    
   }
 }
 </script>

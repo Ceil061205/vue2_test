@@ -1,10 +1,17 @@
 <template>
-  <h2>我是About的内容</h2>
+  <div>
+    <h2>我是About的内容</h2>
+  </div>
 </template>
 <!-- 路由组件pages文件夹 -->
 <script>
 export default {
   name: 'MyAbout',
+  data() {
+    return {
+       formList: [{ content: "" }],
+    }
+  },
   // 通过路由规则进入该组件时被调用  来 (触发路由变化)
   beforeRouteEnter(to,from,next) {  
   if(to.meta.isAuth)

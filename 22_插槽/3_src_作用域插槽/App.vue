@@ -31,8 +31,7 @@ export default {
   name: 'App',
   components: {
     Category
-  },
-  
+  }
 }
 </script>
 <style>

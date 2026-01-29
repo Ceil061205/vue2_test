@@ -17,12 +17,17 @@
           <router-view></router-view>
         </keep-alive>
       </div>
+      <children></children>
     </div>
 </template>
 
 <script>
+import Children from './Children.vue';
 export default {
   name: 'MyHome',
+  components: {
+    Children
+  }
 }
 </script>
 
