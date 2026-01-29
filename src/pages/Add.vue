@@ -60,10 +60,10 @@ export default {
         })
         .catch(() => {});
     },
-    handleChange() {
-      // 输入框变化时同步给父组件
-      this.$emit("update:list", [...this.list]);
-    },
+    // handleChange() {
+    //   // 输入框变化时同步给父组件
+    //   this.$emit("update:list", [...this.list]);
+    // },
   },
 };
 </script>
