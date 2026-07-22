@@ -19,14 +19,16 @@
         删除
       </el-button>
     </div>
-    <el-button
+    <!-- <el-button
       type="primary"
       size="mini"
       @click="addItem"
       style="margin-top: 10px;"
     >
       增加表单项
-    </el-button>
+    </el-button> -->
+    <!-- <i class="el-icon-circle-plus-outline" @click="addItem" style="font-size: 30px"></i> -->
+     <el-butto><i class="el-icon-circle-plus-outline" @click="addItem" style="font-size: 30px"></i></el-butto>
   </div>
 </template>
 
